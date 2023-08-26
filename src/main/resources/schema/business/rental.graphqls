@@ -1,0 +1,33 @@
+"A rental with information about who rented what item, when it was rented, and when it was returned."
+type Rental @connection {
+    "The uuid of the rental."
+    uuid: UUID!
+    "The item being rented."
+    filmCopy: FilmCopy!
+    "The customer renting the item."
+    customer: Customer!
+    "The staff member who processed the rental."
+    staffMember: StaffMember!
+    "The date and time that the item was rented."
+    rentalDate: DateTimeTimezone!
+    "The date and time the item was returned."
+    returnDate: DateTimeTimezone
+    "The date and time the rental was added to the system."
+    createDate: DateTimeTimezone!
+    "The date and time the rental was added/updated to the system."
+    updateDate: DateTimeTimezone!
+}
+
+"The structure to create/update a rental."
+input RentalRequest {
+    "The uuid of the item being rented."
+    filmCopyUuid: UUID!
+    "The uuid of the customer renting the item."
+    customerUuid: UUID!
+    "The uuid of the staff member who processed the rental."
+    staffMemberUuid: UUID!
+    "The date and time that the item was rented."
+    rentalDate: DateTimeTimezone!
+    "The date and time the item was returned."
+    returnDate: DateTimeTimezone
+}

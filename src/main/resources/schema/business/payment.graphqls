@@ -1,0 +1,54 @@
+"A payment made by a customer, with information such as the amount and the rental being paid for (when applicable)."
+type Payment @connection {
+    "The uuid of the payment."
+    uuid: UUID!
+    "The customer whose balance the payment is being applied to."
+    customer: Customer!
+    "The staff member who processed the payment."
+    staffMember: StaffMember!
+    """
+    The rental that the payment is being applied to.
+    This is optional because some payments are for outstanding fees and may not be directly related to a rental.
+    """
+    rental: Rental
+    "The amount of the payment."
+    amount: Decimal!
+    "The date the payment was processed."
+    paymentDate: DateTimeTimezone!
+    "The date and time the payment was added to the system."
+    createDate: DateTimeTimezone!
+    "The date and time the payment was added/updated to the system."
+    updateDate: DateTimeTimezone!
+}
+
+"The structure to create a payment."
+input PaymentCreate {
+    "The uuid of the customer whose balance the payment is being applied to."
+    customerUuid: UUID!
+    "The uuid of the staff member who processed the payment."
+    staffMemberUuid: UUID!
+    """
+    The uuid of the rental that the payment is being applied to.
+    This is optional because some payments are for outstanding fees and may not be directly related to a rental.
+    """
+    rentalUuid: UUID
+    "The amount of the payment."
+    amount: Decimal! @Digits(integer : 8, fraction : 2) @PositiveOrZero
+    "The date the payment was processed."
+    paymentDate: DateTimeTimezone
+}
+
+"The structure to update a payment."
+input PaymentUpdate {
+    "The uuid of the customer whose balance the payment is being applied to."
+    customerUuid: UUID!
+    "The uuid of the staff member who processed the payment."
+    staffMemberUuid: UUID!
+    """
+    The uuid of the that the payment is being applied to.
+    This is optional because some payments are for outstanding fees and may not be directly related to a rental.
+    """
+    rentalUuid: UUID
+    "The amount of the payment."
+    amount: Decimal! @Digits(integer : 8, fraction : 2) @PositiveOrZero
+}

@@ -1,0 +1,35 @@
+"An address information for customers, staff, and stores."
+type Address {
+    "The city of the address"
+    city: City!
+    "The first line of the address."
+    address: String!
+    "An optional second line of the address."
+    address2: String!
+    "The region of the address, this may be a state, province, prefecture, etc."
+    district: String!
+    "The postal code or ZIP code of the address (where applicable)."
+    postalCode: String
+    "The phone number for the address."
+    phone: String!
+    "The date and time the address was added to the system."
+    createDate: DateTimeTimezone!
+    "The date and time the address was added/updated to the system."
+    updateDate: DateTimeTimezone!
+}
+
+"The structure to create/update an address."
+input AddressRequest {
+    "The uuid of the city of the address"
+    cityUuid: UUID!
+    "The first line of the address."
+    address: String! @NotBlank @Size(max : 50)
+    "An optional second line of the address."
+    address2: String! @NotBlank @Size(max : 50)
+    "The region of the address, this may be a state, province, prefecture, etc."
+    district: String! @NotBlank @Size(max : 20)
+    "The postal code or ZIP code of the address (where applicable)."
+    postalCode: String @NotBlank @Size(max : 10)
+    "The phone number for the address."
+    phone: String! @NotBlank @Size(max : 20)
+}

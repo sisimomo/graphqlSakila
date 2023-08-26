@@ -1,0 +1,21 @@
+"A copy of a given film in a given store."
+type FilmCopy @connection {
+    "The uuid of the film DVD."
+    uuid: UUID!
+    "The film this item represents."
+    film: Film!
+    "The store stocking this item."
+    store: Store!
+    "The date and time the film DVD was added to the system."
+    createDate: DateTimeTimezone!
+    "The date and time the film DVD was added/updated to the system."
+    updateDate: DateTimeTimezone!
+}
+
+"The structure to create a film copy."
+input FilmCopyCreate {
+    "The uuid of the film this item represents."
+    filmUuid: UUID!
+    "The uuid of the store stocking this item."
+    storeUuid: UUID!
+}

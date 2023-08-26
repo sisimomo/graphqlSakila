@@ -1,0 +1,101 @@
+type Mutation {
+    "Create a City"
+    cityCreate(cityCreate: CityRequest!): City!
+    "Create Multiples Cities"
+    cityCreateAll(cityCreates: [CityRequest!]): [City!]
+    "Update an existing City"
+    cityUpdate(cityUpdate: CityRequest!, uuid: UUID!): City!
+
+    "Create a Country"
+    countryCreate(countryCreate: CountryRequest!): Country!
+    "Create Multiples Countries"
+    countryCreateAll(countryCreates: [CountryRequest!]): [Country!]
+    "Update an existing Country"
+    countryUpdate(countryUpdate: CountryRequest!, uuid: UUID!): Country!
+
+    "Create a Customer"
+    customerCreate(customerCreate: CustomerCreate!): Customer!
+    "Create Multiples Customers"
+    customerCreateAll(customerCreates: [CustomerCreate!]): [Customer!]
+    "Update an existing Customer"
+    customerUpdate(customerUpdate: CustomerUpdate!, uuid: UUID!): Customer!
+
+
+
+    "Create a Payment"
+    paymentCreate(paymentCreate: PaymentCreate!): Payment!
+    "Create Multiples Payments"
+    paymentCreateAll(paymentCreates: [PaymentCreate!]): [Payment!]
+    "Update an existing Payment"
+    paymentUpdate(paymentUpdate: PaymentUpdate!, uuid: UUID!): Payment!
+
+    "Create a Rental"
+    rentalCreate(rentalCreate: RentalRequest!): Rental!
+    "Create Multiples Rentals"
+    rentalCreateAll(rentalCreates: [RentalRequest!]): [Rental!]
+    "Update an existing Rental"
+    rentalUpdate(rentalUpdate: RentalRequest!, uuid: UUID!): Rental!
+
+    "Create a Staff Member"
+    staffMemberCreate(staffMemberCreate: StaffMemberCreate!): StaffMember!
+    "Create Multiples Staff Members"
+    staffMemberCreateAll(staffMemberCreates: [StaffMemberCreate!]): [StaffMember!]
+    "Update an existing Staff Member"
+    staffMemberUpdate(staffMemberUpdate: StaffMemberUpdate!, uuid: UUID!): StaffMember!
+
+    "Create a Store"
+    storeCreate(storeCreate: StoreRequest!): Store!
+    "Create Multiples Stores"
+    storeCreateAll(storeCreates: [StoreRequest!]): [Store!]
+    "Update an existing Store"
+    storeUpdate(storeUpdate: StoreRequest!, uuid: UUID!): Store!
+
+
+
+    "Create an Actor"
+    actorCreate(actorCreate: ActorRequest!): Actor!
+    "Create Multiples Actors"
+    actorCreateAll(actorCreates: [ActorRequest!]): [Actor!]
+    "Update an existing Actor"
+    actorUpdate(actorUpdate: ActorRequest!, uuid: UUID!): Actor!
+
+    "Create a Category"
+    categoryCreate(categoryCreate: CategoryRequest!): Category!
+    "Create Multiples Categories"
+    categoryCreateAll(categoryCreates: [CategoryRequest!]): [Category!]
+    "Update an existing Category"
+    categoryUpdate(categoryUpdate: CategoryRequest!, uuid: UUID!): Category!
+
+    "Create a Film"
+    filmCreate(filmCreate: FilmRequest!): Film!
+    "Create Multiples Films"
+    filmCreateAll(filmCreates: [FilmRequest!]): [Film!]
+    "Update an existing Film"
+    filmUpdate(filmUpdate: FilmRequest!, uuid: UUID!): Film!
+
+    "Create a FilmCopy"
+    filmCopyCreate(filmCopyCreate: FilmCopyCreate!): FilmCopy!
+    "Create Multiples FilmCopies"
+    filmCopyCreateAll(filmCopyCreates: [FilmCopyCreate!]): [FilmCopy!]
+
+    "Create a Language"
+    languageCreate(languageCreate: LanguageRequest!): Language!
+    "Create Multiples Languages"
+    languageCreateAll(languageCreates: [LanguageRequest!]): [Language!]
+    "Update an existing Language"
+    languageUpdate(languageUpdate: LanguageRequest!, uuid: UUID!): Language!
+
+    "Create a Rating"
+    ratingCreate(ratingCreate: RatingRequest!): Rating!
+    "Create Multiples Ratings"
+    ratingCreateAll(ratingCreates: [RatingRequest!]): [Rating!]
+    "Update an existing Rating"
+    ratingUpdate(ratingUpdate: RatingRequest!, uuid: UUID!): Rating!
+
+    "Create a Special Feature"
+    specialFeatureCreate(specialFeatureCreate: SpecialFeatureRequest!): SpecialFeature!
+    "Create Multiples Special Features"
+    specialFeatureCreateAll(specialFeatureCreates: [SpecialFeatureRequest!]): [SpecialFeature!]
+    "Update an existing Special Feature"
+    specialFeatureUpdate(specialFeatureUpdate: SpecialFeatureRequest!, uuid: UUID!): SpecialFeature!
+}

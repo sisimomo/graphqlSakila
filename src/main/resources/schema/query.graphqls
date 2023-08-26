@@ -1,0 +1,77 @@
+type Query {
+
+    "Return detailed information about a specific City"
+    cityGet(uuid: UUID!): City!
+    "Return detailed information of all Cities, sorted and paged"
+    citiesGet(scrollRequest: ScrollRequest): CityConnection!
+
+    "Return detailed information about a specific Country"
+    countryGet(uuid: UUID!): Country!
+    "Return detailed information of all Countries, sorted and paged"
+    countriesGet(scrollRequest: ScrollRequest): CountryConnection!
+
+    "Return detailed information about a specific Customer"
+    customerGet(uuid: UUID!): Customer!
+    "Return detailed information of all Customers, paged"
+    customersGet(scrollRequest: ScrollRequest): CustomerConnection!
+
+
+
+    "Return detailed information about a specific Payment"
+    paymentGet(uuid: UUID!): Payment!
+    "Return detailed information of all Payments, sorted and paged"
+    paymentsGet(scrollRequest: ScrollRequest): PaymentConnection!
+
+    "Return detailed information about a specific Rental"
+    rentalGet(uuid: UUID!): Rental!
+    "Return detailed information of all Rentals, sorted and paged"
+    rentalsGet(scrollRequest: ScrollRequest): RentalConnection!
+
+    "Return detailed information about a Staff Member"
+    staffMemberGet(uuid: UUID!): StaffMember!
+    "Return detailed information of all Staff Members, sorted and paged"
+    staffMembersGet(scrollRequest: ScrollRequest): StaffMemberConnection!
+
+    "Return detailed information about a specific Store"
+    storeGet(uuid: UUID!): Store!
+    "Return detailed information of all Stores, sorted and paged"
+    storesGet(scrollRequest: ScrollRequest): StoreConnection!
+
+
+
+    "Return detailed information about a specific actor"
+    actorGet(uuid: UUID!): Actor!
+    "Return detailed information of all Actors, sorted and paged"
+    actorsGet(scrollRequest: ScrollRequest): ActorConnection!
+
+    "Return detailed information about a specific Category"
+    categoryGet(uuid: UUID!): Category!
+    "Return detailed information of all Categories, sorted and paged"
+    categoriesGet(scrollRequest: ScrollRequest): CategoryConnection!
+
+    "Return detailed information about a specific Film Copy"
+    filmCopyGet(uuid: UUID!): FilmCopy!
+    "Return detailed information of all Film Copies, sorted and paged"
+    filmCopiesGet(scrollRequest: ScrollRequest): FilmCopyConnection!
+
+    "Return detailed information about a specific Film"
+    filmGet(uuid: UUID!): Film!
+    "Return detailed information of all Films, sorted and paged"
+    filmsGet(scrollRequest: ScrollRequest): FilmConnection!
+
+    "Return detailed information about a specific Language"
+    languageGet(uuid: UUID!): Language!
+    "Return detailed information of all Languages, sorted and paged"
+    languagesGet(scrollRequest: ScrollRequest): LanguageConnection!
+
+    "Return detailed information about a specific Rating"
+    ratingGet(uuid: UUID!): Rating!
+    "Return detailed information of all Ratings, sorted and paged"
+    ratingsGet(scrollRequest: ScrollRequest): RatingConnection!
+
+    "Return detailed information about a specific Special Feature"
+    specialFeatureGet(uuid: UUID!): SpecialFeature!
+    "Return detailed information of all Special Features, sorted and paged"
+    specialFeaturesGet(scrollRequest: ScrollRequest): SpecialFeatureConnection!
+
+}

@@ -1,0 +1,21 @@
+"A city."
+type City @connection {
+    "The uuid of the city."
+    uuid: UUID!
+    "The country that the city belongs to."
+    country: Country!
+    "The name of the city."
+    city: String!
+    "The date and time the city was added to the system."
+    createDate: DateTimeTimezone!
+    "The date and time the city was added/updated to the system."
+    updateDate: DateTimeTimezone!
+}
+
+"The structure to create/update a city."
+input CityRequest {
+    "The uuid of the country that the city belongs to."
+    countryUuid: UUID!
+    "The name of the city."
+    city: String! @NotBlank @Size(max : 50)
+}

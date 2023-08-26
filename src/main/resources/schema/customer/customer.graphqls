@@ -1,0 +1,51 @@
+"A customer."
+type Customer @connection {
+    "The uuid of the customer."
+    uuid: UUID!
+    "The customer's \"home store\". Customers are not limited to renting only from this store, but this is the store they generally shop at."
+    store: Store!
+    "The customer's first name."
+    firstName: String!
+    "The customer's last name."
+    lastName: String!
+    "The customer's email address."
+    email: String
+    "The customer's address."
+    address: Address!
+    "Indicates whether the customer is an active customer."
+    active: Boolean
+    "The date and time the customer was added to the system."
+    createDate: DateTimeTimezone!
+    "The date and time the customer was added/updated to the system."
+    updateDate: DateTimeTimezone!
+}
+
+"The structure to create a customer."
+input CustomerCreate {
+    "The uuid of the customer's \"home store\". Customers are not limited to renting only from this store, but this is the store they generally shop at."
+    storeUuid: UUID!
+    "The customer's first name."
+    firstName: String! @NotBlank @Size(max : 45)
+    "The customer's last name."
+    lastName: String! @NotBlank @Size(max : 45)
+    "The customer's email address."
+    email: String @NotBlank @Size(max : 50)
+    "The customer's address."
+    address: AddressRequest!
+}
+
+"The structure to update a customer."
+input CustomerUpdate {
+    "The uuid of the customer's \"home store\". Customers are not limited to renting only from this store, but this is the store they generally shop at."
+    storeUuid: UUID!
+    "The customer's first name."
+    firstName: String! @NotBlank @Size(max : 45)
+    "The customer's last name."
+    lastName: String! @NotBlank @Size(max : 45)
+    "The customer's email address."
+    email: String @NotBlank @Size(max : 50)
+    "The customer's address."
+    address: AddressRequest!
+    "Indicates whether the customer is an active customer."
+    active: Boolean
+}

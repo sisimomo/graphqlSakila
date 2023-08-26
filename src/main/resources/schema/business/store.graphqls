@@ -1,0 +1,21 @@
+"A store. All inventory is assigned to specific stores, and staff and customers are assigned a \"home store\"."
+type Store @connection {
+    "The uuid of the store."
+    uuid: UUID!
+    "The manager of this store."
+    manager: StaffMember
+    "The address of this store."
+    address: Address!
+    "The date and time the store was added to the system."
+    createDate: DateTimeTimezone!
+    "The date and time the store was added/updated to the system."
+    updateDate: DateTimeTimezone!
+}
+
+"The structure to create/update a store."
+input StoreRequest {
+    "The uuid of the manager of this store."
+    managerUuid: UUID!
+    "The address of this store."
+    address: AddressRequest!
+}

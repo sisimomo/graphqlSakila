@@ -1,0 +1,34 @@
+"Sort direction."
+enum SortOrder {
+    "Sort the query results in a top to bottom style."
+    ASC,
+    "Sort the query results in a bottom to top style."
+    DESC
+}
+
+"Scrolling direction."
+enum ScrollingDirection {
+    "Forward direction to scroll from the beginning of the results to their end."
+    FORWARD,
+    "Backward direction to scroll from the end of the results to their beginning."
+    BACKWARD
+}
+
+"Allows you to order the search results by a specific field (ASC or DESC)."
+input Sort {
+    order: SortOrder! = ASC
+    field: String! @NotBlank
+}
+
+input ScrollRequest {
+    "The scroll request cursor."
+    cursor: String @NotBlank
+    "The maximum number of results to return."
+    size: Int! @Positive @Max(value: 50)
+    "The scrolling direction."
+    direction: ScrollingDirection! = FORWARD
+    "Filter string that will filter the results [Syntax Documentation](https://github.com/turkraft/springfilter#syntax)."
+    filter: String @NotBlank
+    "The list of all desired sort, ordered."
+    sorts: [Sort]
+}

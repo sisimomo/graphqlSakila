@@ -1,0 +1,35 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" factoryName="Gradle" name="Create Seed Data"
+    type="GradleRunConfiguration">
+    <DebugAllEnabled>false</DebugAllEnabled>
+    <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+    <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+    <ExternalSystemSettings>
+      <option name="env">
+        <map>
+          <entry key="DB_ENCRYPTION_KEY" value="drIeoH5OZAhOTP62tFlD3Q=="/>
+          <entry key="MARIADB_PASSWORD" value="password"/>
+          <entry key="MARIADB_USER" value="user"/>
+          <entry key="PAGINATION_ENCRYPTION_KEY" value="we9Pat8D3BFm1j/Cd8y7GQ=="/>
+        </map>
+      </option>
+      <option name="executionName"/>
+      <option name="externalProjectPath" value="$PROJECT_DIR$"/>
+      <option name="externalSystemIdString" value="GRADLE"/>
+      <option name="scriptParameters" value=""/>
+      <option name="taskDescriptions">
+        <list/>
+      </option>
+      <option name="taskNames">
+        <list>
+          <option value=":test"/>
+          <option value="--tests"/>
+          <option value="&quot;com.github.sisimomo.graphqlsakila.seed.TestCreateSeedData&quot;"/>
+        </list>
+      </option>
+      <option name="vmOptions"/>
+    </ExternalSystemSettings>
+    <ForceTestExec>false</ForceTestExec>
+    <method v="2"/>
+  </configuration>
+</component>

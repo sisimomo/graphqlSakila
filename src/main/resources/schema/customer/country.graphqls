@@ -1,0 +1,17 @@
+"A country."
+type Country @connection {
+    "The uuid of the country."
+    uuid: UUID!
+    "The name of the country."
+    country: String!
+    "The date and time the country was added to the system."
+    createDate: DateTimeTimezone!
+    "The date and time the country was added/updated to the system."
+    updateDate: DateTimeTimezone!
+}
+
+"The structure to create/update a country."
+input CountryRequest {
+    "The name of the country."
+    country: String! @NotBlank @Size(max : 50)
+}

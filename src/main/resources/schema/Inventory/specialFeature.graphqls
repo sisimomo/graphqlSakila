@@ -1,0 +1,17 @@
+"A possible special feature that films can have for their specialFeature field."
+type SpecialFeature @connection {
+    "The uuid of the special feature."
+    uuid: UUID!
+    "The name of the special feature."
+    name: String!
+    "The date and time the special feature was added to the system."
+    createDate: DateTimeTimezone!
+    "The date and time the special feature was added/updated to the system."
+    updateDate: DateTimeTimezone!
+}
+
+"The structure to create/update a special feature."
+input SpecialFeatureRequest {
+    "The name of the special feature."
+    name: String! @NotBlank @Size(max : 25)
+}

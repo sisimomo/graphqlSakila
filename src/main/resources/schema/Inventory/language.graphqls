@@ -1,0 +1,17 @@
+"A possible language that films can have for their language and original language values fields."
+type Language @connection {
+    "The uuid of the language."
+    uuid: UUID!
+    "The English name of the language."
+    name: String!
+    "The date and time the language was added to the system."
+    createDate: DateTimeTimezone!
+    "The date and time the language was added/updated to the system."
+    updateDate: DateTimeTimezone!
+}
+
+"The structure to create/update an language."
+input LanguageRequest {
+    "The English name of the language."
+    name: String! @NotBlank @Size(max : 45)
+}

@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Local" type="Application" factoryName="Application">
+    <envs>
+      <env name="DB_ENCRYPTION_KEY" value="drIeoH5OZAhOTP62tFlD3Q==" />
+      <env name="MARIADB_USER" value="user" />
+      <env name="MARIADB_PASSWORD" value="password" />
+      <env name="PAGINATION_ENCRYPTION_KEY" value="we9Pat8D3BFm1j/Cd8y7GQ==" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="com.github.sisimomo.graphqlsakila.GraphqlSakilaApplication" />
+    <module name="graphqlSakila.main" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

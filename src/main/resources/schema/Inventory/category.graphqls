@@ -1,0 +1,17 @@
+"A category that can be assigned to a film."
+type Category @connection {
+    "The uuid of the category."
+    uuid: UUID!
+    "The name of the category."
+    name: String!
+    "The date and time the category was added to the system."
+    createDate: DateTimeTimezone!
+    "The date and time the category was added/updated to the system."
+    updateDate: DateTimeTimezone!
+}
+
+"The structure to create/update a category."
+input CategoryRequest {
+    "The name of the category."
+    name: String! @NotBlank @Size(max : 45)
+}

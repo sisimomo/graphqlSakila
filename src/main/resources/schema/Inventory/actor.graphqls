@@ -1,0 +1,21 @@
+"An actor."
+type Actor @connection {
+    "The uuid of the actor."
+    uuid: UUID!
+    "The first name of the actor."
+    firstName: String!
+    "The last name of the actor."
+    lastName: String!
+    "The date and time the actor was added to the system."
+    createDate: DateTimeTimezone!
+    "The date and time the actor was added/updated to the system."
+    updateDate: DateTimeTimezone!
+}
+
+"The structure to create/update an actor."
+input ActorRequest {
+    "The actor's first name."
+    firstName: String! @NotBlank @Size(max : 45)
+    "The actor's last name."
+    lastName: String! @NotBlank @Size(max : 45)
+}

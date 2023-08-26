@@ -1,0 +1,17 @@
+"A possible rating that films can have for their rating field."
+type Rating @connection {
+    "The uuid of the rating."
+    uuid: UUID!
+    "The name of the rating."
+    name: String!
+    "The date and time the rating was added to the system."
+    createDate: DateTimeTimezone!
+    "The date and time the rating was added/updated to the system."
+    updateDate: DateTimeTimezone!
+}
+
+"The structure to create/update a rating."
+input RatingRequest {
+    "The name of the rating."
+    name: String! @NotBlank @Size(max : 25)
+}

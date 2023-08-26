@@ -1,0 +1,7 @@
+"Represents an instantaneous point on the time-line. Equivalent to Java java.time.Instant."
+scalar DateTimeTimezone @specifiedBy(url:"https://en.wikipedia.org/wiki/ISO_8601")
+"Represents an immutable universally unique identifier (UUID). Equivalent to Java java.util.UUID."
+scalar UUID @specifiedBy(url:"https://tools.ietf.org/html/rfc4122")
+"Represents a random precision integer unscaled value and a 32-bit integer scale. Equivalent to Java java.math.BigDecimal."
+scalar Decimal
+scalar Upload

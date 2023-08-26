@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  graphqlSakila_mariadb:
+    container_name: graphqlSakila_mariadb
+    hostname: graphqlSakila-mariadb
+    restart: unless-stopped
+    image: 'mariadb:10.11'
+    environment:
+      - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
+      - MARIADB_USER=${MARIADB_USER}
+      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
+      - MARIADB_DATABASE=${MARIADB_DATABASE}
+    volumes:
+      - ./mariadb_data/init-scripts:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306

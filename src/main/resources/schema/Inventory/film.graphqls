@@ -1,0 +1,74 @@
+"""
+A film potentially in stock in a store.
+For the actual in-stock copies of each film go see the inventory of the wanted store.
+"""
+type Film @connection {
+    "The uuid of the film."
+    uuid: UUID!
+    "The title of the film."
+    title: String!
+    "A short description or plot summary of the film."
+    description: String
+    "The year in which the movie was released."
+    releaseYear: Int
+    "The list of categories of the film."
+    categories: [Category]
+    "The list of actors that play in the film."
+    actors: [Actor]
+    "The language of the film."
+    language: Language!
+    """
+    The original language of the film.
+    Used when a film has been dubbed into a new language.
+    """
+    originalLanguage: Language
+    "The length of the rental period, in days."
+    rentalDuration: Int!
+    "The cost to rent the film for the period specified in the \"rentalDuration\" field."
+    rentalRate: Decimal!
+    "The duration of the film, in minutes."
+    length: Int
+    "The amount charged to the customer if the film is not returned or is returned in a damaged state."
+    replacementCost: Decimal!
+    "The rating assigned to the film."
+    rating: Rating
+    "Lists of which special features are included on the DVD."
+    specialFeatures: [SpecialFeature]
+    "The date and time the film was added to the system."
+    createDate: DateTimeTimezone!
+    "The date and time the film was added/updated to the system."
+    updateDate: DateTimeTimezone!
+}
+
+"The structure to create/update a film."
+input FilmRequest {
+    "The title of the film."
+    title: String! @NotBlank @Size(max: 255)
+    "A short description or plot summary of the film."
+    description: String @NotBlank @Size(max: 65535)
+    "The year in which the movie was released."
+    releaseYear: Int @Min(value: 1850)
+    "The list of uuids of the categories of the film."
+    categoryUuids: [UUID]
+    "The list of uuids of the actors that play in the film."
+    actorUuids: [UUID]
+    "The uuid of the language of the film."
+    languageUuid: UUID!
+    """
+    The uuid of the original language of the film.
+    Used when a film has been dubbed into a new language.
+    """
+    originalLanguageUuid: UUID
+    "The length of the rental period, in days."
+    rentalDuration: Int! @Positive
+    "The cost to rent the film for the period specified in the \"rentalDuration\" field."
+    rentalRate: Decimal! @Digits(integer : 5, fraction : 2) @PositiveOrZero
+    "The duration of the film, in minutes."
+    length: Int @Positive
+    "The amount charged to the customer if the film is not returned or is returned in a damaged state."
+    replacementCost: Decimal! @Digits(integer : 6, fraction : 2) @PositiveOrZero
+    "The uuid of the rating assigned to the film."
+    ratingUuid: UUID
+    "Lists of which special feature uuids are included on the DVD."
+    specialFeatureUuids: [UUID]
+}

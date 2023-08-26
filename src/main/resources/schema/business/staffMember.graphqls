@@ -1,0 +1,63 @@
+"A staff member, including information on email address, login information, and picture."
+type StaffMember @connection {
+    "The uuid of the staff member."
+    uuid: UUID!
+    "The staff member's \"home store\". The employee can work at other stores but is generally assigned to the store listed."
+    store: Store!
+    "The staff member's address."
+    address: Address!
+    "The username used by the staff member to access the rental system."
+    username: String!
+    "The first name of the staff member."
+    firstName: String!
+    "The last name of the staff member."
+    lastName: String!
+    "A photograph of the staff member."
+    picture: String
+    "The staff member's email address."
+    email: String
+    "Whether this is an active employee. If employees leave their rows are not deleted from this table, instead this column is set to FALSE."
+    active: Boolean!
+    "The date and time the staff member was added to the system."
+    createDate: DateTimeTimezone!
+    "The date and time the staff member was added/updated to the system."
+    updateDate: DateTimeTimezone!
+}
+
+"The structure to create a staff member."
+input StaffMemberCreate {
+    "The uuid of the staff member's \"home store\". The employee can work at other stores but is generally assigned to the store listed."
+    storeUuid: UUID!
+    "The staff member's address."
+    address: AddressRequest!
+    "The username used by the staff member to access the rental system."
+    username: String! @NotBlank @Size(max : 16)
+    "The first name of the staff member."
+    firstName: String! @NotBlank @Size(max : 45)
+    "The last name of the staff member."
+    lastName: String! @NotBlank @Size(max : 45)
+    "A photograph of the staff member."
+    picture: Upload
+    "The staff member's email address."
+    email: String @NotBlank @Size(max : 50) @Pattern(regexp: "[A-Z-a-z0-9._%+-]+@[A-Z-a-z0-9.-]+\\.[A-Z-a-z]{2,4}", message: "Email must be correctly formatted")
+    "The password used by the staff member to access the rental system."
+    password: String! @NotBlank @Size(min: 8, max : 99)
+}
+
+"The structure to update a staff member."
+input StaffMemberUpdate {
+    "The uuid of the staff member's \"home store\". The employee can work at other stores but is generally assigned to the store listed."
+    storeUuid: UUID!
+    "The first name of the staff member."
+    firstName: String! @NotBlank @Size(max : 45)
+    "The last name of the staff member."
+    lastName: String! @NotBlank @Size(max : 45)
+    "The staff member's address."
+    address: AddressRequest!
+    "A photograph of the staff member."
+    picture: Upload!
+    "The staff member's email address."
+    email: String @NotBlank @Size(max : 50)
+    "Whether this is an active employee. If employees leave their rows are not deleted from this table, instead this column is set to FALSE."
+    active: Boolean!
+}

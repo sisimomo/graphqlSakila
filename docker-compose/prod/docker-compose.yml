@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  graphqlSakila_mariadb:
+    container_name: graphqlSakila_mariadb
+    hostname: graphqlSakila-mariadb
+    restart: unless-stopped
+    image: 'mariadb:10.11'
+    environment:
+      - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
+      - MARIADB_USER=${MARIADB_USER}
+      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
+      - MARIADB_DATABASE=${MARIADB_DATABASE}
+    volumes:
+      - ./mariadb_data/init-scripts:/docker-entrypoint-initdb.d
+
+  graphqlSakila_dgs:
+    container_name: graphqlSakila_dgs
+    hostname: graphqlSakila-dgs
+    image: sisimomo/graphql-sakila-demo
+    restart: unless-stopped
+    depends_on:
+      - graphqlSakila_mariadb
+    environment:
+      - MARIADB_HOST=graphqlSakila-mariadb
+      - MARIADB_USER=${MARIADB_USER}
+      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
+      - MARIADB_DATABASE=${MARIADB_DATABASE}
+      - MARIADB_PORT=3306
+      - DB_ENCRYPTION_KEY=${DB_ENCRYPTION_KEY}
+      - PAGINATION_ENCRYPTION_KEY=${PAGINATION_ENCRYPTION_KEY}
+
+  graphqlSakila_cloudflared:
+    container_name: graphqlSakila_cloudflared
+    image: cloudflare/cloudflared
+    restart: unless-stopped
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
