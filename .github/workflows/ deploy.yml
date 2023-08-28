@@ -48,6 +48,5 @@ jobs:
             cd ~/deployments/graphqlSakila/docker-compose/prod
             docker compose down
             git pull
-            docker compose up -d
             docker pull sisimomo/graphql-sakila-demo
-            docker restart graphqlSakila_dgs
+            docker compose up -d

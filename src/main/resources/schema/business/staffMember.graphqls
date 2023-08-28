@@ -55,7 +55,7 @@ input StaffMemberUpdate {
     "The staff member's address."
     address: AddressRequest!
     "A photograph of the staff member."
-    picture: Upload!
+    picture: Upload
     "The staff member's email address."
     email: String @NotBlank @Size(max : 50)
     "Whether this is an active employee. If employees leave their rows are not deleted from this table, instead this column is set to FALSE."

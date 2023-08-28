@@ -57,7 +57,7 @@ public class KeysetPaginationService {
   private final FilterParser filterParser;
   private final FilterSpecificationConverter filterSpecificationConverter;
 
-  public KeysetPaginationService(@Value("${db.encryption.key}") String encodedKey, ObjectMapper objectMapper,
+  public KeysetPaginationService(@Value("${pagination.encryption.key}") String encodedKey, ObjectMapper objectMapper,
       FilterParser filterParser, FilterSpecificationConverter filterSpecificationConverter) {
     this.key = AesGcmUtils.stringToSecretKey(encodedKey);
     this.objectMapper = objectMapper;
