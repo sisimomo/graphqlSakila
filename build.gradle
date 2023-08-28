@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.github.sisimomo"
-version = "1.0.0"
+version = "1.0.1"
 sourceCompatibility = JavaVersion.VERSION_17
 
 configurations {
