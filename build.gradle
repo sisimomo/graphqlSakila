@@ -25,7 +25,7 @@ ext {
     lombokMapstructBinding = "0.2.0"
     mapstructVersion = "1.5.5.Final"
     jpamodelgenVersion = "6.2.7.Final"
-    springDataJpaEntityGraphVersion = "3.0.1"
+    springDataJpaEntityGraphVersion = "3.1.0"
     janinoVersion = "3.1.10"
     springBootDataSourceDecoratorVersion = "1.9.0"
     passayVersion = "1.6.3"
