@@ -20,7 +20,7 @@ repositories {
 }
 
 ext {
-    netflixDgsVersion = "7.3.6"
+    netflixDgsVersion = "7.5.3"
     lombokVersion = "1.18.28"
     lombokMapstructBinding = "0.2.0"
     mapstructVersion = "1.5.5.Final"
