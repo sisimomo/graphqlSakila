@@ -21,7 +21,7 @@ repositories {
 
 ext {
     netflixDgsVersion = "7.3.6"
-    lombokVersion = "1.18.28"
+    lombokVersion = "1.18.30"
     lombokMapstructBinding = "0.2.0"
     mapstructVersion = "1.5.5.Final"
     jpamodelgenVersion = "6.2.7.Final"
